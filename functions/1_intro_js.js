@@ -40,6 +40,7 @@ const ayakoObj = {
   pets: ["cat", "dog"]
 }
 
+
 const jobTitle = "profession"
 
 console.log("5:dot notation", ayakoObj.profession)
@@ -65,3 +66,14 @@ const number2 = 5;
 
 const result = number1 === number2 ? "number 1 is same as number 2" : "number 1 is not number 2";
 console.log("7:conditional", result);
+
+
+const emptyObj = {}
+console.log("8:undefined", emptyObj.value ) //undefined
+console.log("8:undefined", !emptyObj.value ) //true
+console.log("8:undefined", !!emptyObj.value ) //false
+
+
+
+const value = null;
+console.log("8:null", value ? "Has value" : "has no value"); //"has no value"
