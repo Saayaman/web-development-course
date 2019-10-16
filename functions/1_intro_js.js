@@ -29,7 +29,7 @@ console.log("2:number", updatedCount + 1)
 
 console.log(`3:template literals My age is ${age}`);
 
-const students = ["Vlad", "Isao", "Shin", "Cedric", "Risa", "Nobu", "Tatsuya", "Paulo", `Newaj`, "Ronan", "Gustavo", 'Gustavo', "Jun", "James", "Marcus"]
+const students = ["Vlad", "Isao", "Shin", "Cedric", "Risa", "Nobu", "Tatsuya", "Paulo", `Newaj(Ramzi?)`, "Ronan", "Gustavo", 'Gustavo', "Jun", "James(Ye Si?)", "Marcus"]
 const [firstStudent, secondStudent] = students;
 console.log("4:destructuring", firstStudent, secondStudent);
 
