@@ -99,3 +99,41 @@ console.log('is threre a toyota?', cars.includes('toyota'));
 let isFound = cars.some(car => car === 'ford')
 console.log('isFound', true);
 
+// 11. indexOf (returns a index)
+let indexOfFerrari = cars.indexOf('ferrari');
+let indexOfTesla = cars.indexOf('tesla') //-1
+
+console.log('indexofferrari', indexOfFerrari);
+console.log('indexOfTesla', indexOfTesla);
+
+// 12. join
+const jointText = cars.join(', ');
+console.log('joined text', jointText);
+
+// 13. split
+console.log('split', jointText.split(', '));
+
+// 14. Classes
+
+class Student {
+  static studentClassName = 'React'
+
+  constructor(name, age) {
+    //global variable inside a class
+    this.name = name;
+    this.age = age;
+    //private variable: cannot use it outisde constructor
+    const studentName = name;
+  }
+
+  greetStudent() {
+    return `Hi, ${this.name}`
+  }
+}
+
+const firstStudent = new Student('Ayako', 31);
+//Setter
+firstStudent.age = 40
+console.log('greetstudent', firstStudent.greetStudent(), firstStudent.age);
+console.log('age', firstStudent.age);
+console.log('static', Student.studentClassName)
