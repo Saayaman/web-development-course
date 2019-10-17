@@ -102,3 +102,18 @@ for (let [key, value] of Object.entries(weather)) {
 }
 
 
+function funcName(a, b) {
+ return a * b
+}
+
+const functName = (a, b) => {
+  return a*b
+}
+
+const funcName = (a, b) => a*b
+
+const funcName = a => a
+
+
+
+console.log('function result', funcName());
