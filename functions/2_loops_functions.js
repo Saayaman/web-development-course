@@ -65,3 +65,40 @@ deviceArr.length = 2;
 console.log('deviceArr', deviceArr);
 deviceArr.length = 5;
 console.log('deviceArr', deviceArr);
+
+
+let houseType = ["bachelor", "studio", "condo", "apartment", "house", "basement"]
+
+// for(let i = 0; i < houseType.length; i++) {
+//   console.log(`housetype no.${i}. ${houseType[i]}`);
+// }
+
+//Array loop: gives you value
+for(let type of houseType) {
+  console.log(`houseType ${type}`)
+}
+
+//Array loop: gives you index
+for(let typeIndex in houseType) {
+  console.log(`houseType ${typeIndex}`);
+}
+
+
+let weather = {
+  temperature: '30celcius',
+  city: "Vancouver",
+  date: "Nov 16th"
+}
+
+
+//Object loop for...in: gives you the key
+for(let key in weather) {
+  console.log('key', key, weather[key]);
+}
+
+console.log('object values', Object.entries(weather));
+for (let [key, value] of Object.entries(weather)) {
+  console.log('value', value);
+}
+
+
