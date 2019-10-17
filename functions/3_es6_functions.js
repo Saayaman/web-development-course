@@ -4,9 +4,18 @@ const students = ['Gustavo', 'Ronan', 'Jun', 'James'];
 //parameter name can be anything
 students.map((student) => console.log(`Hi!, ${student}`));
 
+students.map(function(student){
+  console.log(`Hi!, ${student}`) 
+});
+
+
 //you don't have to put parenthesis if there is only 1 parameter.
+
 const greetings = students.map(student => `Hi!, ${student}`);
-console.log('greetings!', greetings);
+
+// const greetings = students.map(student => {
+//   return `Hi!, ${student}`
+// });
 
 
 const greetingsReturn = students.map((student, index) => {
@@ -62,14 +71,31 @@ console.log('Animals:', animals, "slicedAnimals:", slicedAnimals);
 animals.forEach((animal) => console.log(`I love ${animal}`))
 
 // ----- 6. reduce
-let numbers = [5,2,10,111,9,16]
+let numbers = [5,2,-10,111,9,16]
 let totalNum = numbers.reduce((total, currentNum) => total + currentNum)
 console.log('total', totalNum);
 
 // ---- 7. sort numbers
 numbers.sort(function(number1, number2){
   // return number1 - number2
+  console.log('numbers', number1, number2);
   return number2 - number1
 })
 
 console.log(numbers);
+
+
+// 8. find
+let cars = ['mitsubishi', 'toyota', 'ford', 'benz', 'ferrari'];
+
+let found = cars.find(car => car === 'ford')
+console.log('found', found);
+
+// 9. includes (returns a boolean)
+console.log('is threre a volkswagen?', cars.includes('volkswagen'));
+console.log('is threre a toyota?', cars.includes('toyota'));
+
+// 10. some (returns a boolean)
+let isFound = cars.some(car => car === 'ford')
+console.log('isFound', true);
+
