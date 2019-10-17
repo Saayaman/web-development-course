@@ -29,14 +29,17 @@ console.log('greetingsReturn2', greetingsReturn3);
 
 //-------2. FILTER
 
-//must return a boolean to filter
+// must return a boolean to filter
 const filteredResult = students.filter(student => student.length < 4)
 console.log('filteredResult', filteredResult);
-console.log('filteredResult2', students.filter((student, index) => student.length < 4))
+console.log('filteredResult2', students.filter(
+  (student, index) => student.length < 4)
+)
 
 // ------ 3. SPLICE
 let sweets = ['chocolate', 'cake', 'bubble tea', 'mousse', 'cheese cake'];
 
+// 1. (a,b) a= starting position b =number of elements
 sweets.splice(3, 2)
 console.log('sweets', sweets);
 
@@ -46,3 +49,27 @@ console.log('sweets', sweets);
 //putting it in a variable returns deleted array
 const deletedElements = sweets.splice(0,2);
 console.log('sweets', deletedElements);
+
+// ------ 4. SLICE
+let animals = ["lion", "mink", "parrots", "cats", "racoon"]
+
+// (a, b) a = starting position, b = ending position
+const slicedAnimals = animals.slice(2, 4)
+console.log('Animals:', animals, "slicedAnimals:", slicedAnimals);
+
+// ------ 5. forEach (new way of doing loop)
+//gives us no result
+animals.forEach((animal) => console.log(`I love ${animal}`))
+
+// ----- 6. reduce
+let numbers = [5,2,10,111,9,16]
+let totalNum = numbers.reduce((total, currentNum) => total + currentNum)
+console.log('total', totalNum);
+
+// ---- 7. sort numbers
+numbers.sort(function(number1, number2){
+  // return number1 - number2
+  return number2 - number1
+})
+
+console.log(numbers);
