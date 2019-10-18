@@ -41,6 +41,7 @@ console.log('greetingsReturn2', greetingsReturn3);
 // must return a boolean to filter
 const filteredResult = students.filter(student => student.length < 4)
 console.log('filteredResult', filteredResult);
+
 console.log('filteredResult2', students.filter(
   (student, index) => student.length < 4)
 )
@@ -131,9 +132,28 @@ class Student {
   }
 }
 
+
 const firstStudent = new Student('Ayako', 31);
+//Getter
+console.log('age', firstStudent.age) //returns 31
+
 //Setter
 firstStudent.age = 40
+console.log('age', firstStudent.age); //returns 40
+
 console.log('greetstudent', firstStudent.greetStudent(), firstStudent.age);
-console.log('age', firstStudent.age);
 console.log('static', Student.studentClassName)
+
+
+let obj = {
+  name: "Ayako",
+  age: 31,
+  occupation: "teacher"
+}
+
+let newObj = {
+  ...obj, name: "Derrick", age: 30
+}
+
+console.log("newObj", newObj);
+//result: { name: "Derrick", age: 30, occupation: "teacher" }
