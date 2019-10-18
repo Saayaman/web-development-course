@@ -75,3 +75,20 @@ let seagull = {
 
 console.log('spread obj', {...seagull, beakColor: 'yellow'});
 console.log('override value', {...seagull, color: 'black'});
+
+function alertMe() {
+  alert('Ahhhhh!');
+}
+
+setTimeout(alertMe, 4000); //1st parameter has to be a function!
+setTimeout(() => alertMe(), 8000);
+
+function tick() {
+  console.log(new Date().getSeconds());
+}
+const tickVar = setInterval(tick, 1000)
+
+setTimeout(() => {
+  clearInterval(tickVar);
+  console.log('finished ticking!');
+}, 10000);

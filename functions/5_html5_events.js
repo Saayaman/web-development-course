@@ -6,15 +6,49 @@
 // Onmouseover = when you hover
 // Onmouseout = when you hover out
 
-console.log(location.href);
+function handleClick() {
+  console.log('Clicked!');
+}
 
-const addNewInput = (event) => {
-  const inputValue = document.getElementById("listInput").value
-  console.log('inputValue', inputValue);
-
-  const target = event.target
+function handleFormClick(event) {
+  //prevents page from refreshing
+  event.preventDefault();
+  
+  const target = event.target;
   console.log('target', target);
 
-  const targetTag = event.target.tagName;
-  console.log('targetTag', targetTag);
+  const tagName = event.target.tagName;
+  console.log('tagName', tagName);
+
+  const inputValue = document.getElementById("NameInput").value
+  console.log('input', inputValue);
+
+  const newLine = document.createElement('li');
+  newLine.textContent = inputValue
+
+  const list = document.getElementById("NameLists");
+
+  list.appendChild(newLine);
+  document.getElementById('NameInput').value = ''
+  
+}
+
+const handleInputChange = (event) => {
+  console.log('input', event.target.value);
+}
+
+const handleFocus = () => {
+  console.log('focused!');
+}
+
+const handleBlur = () => {
+  console.log('blurred!');
+}
+
+const handleMouseOver = () => {
+  console.log('mouse over!');
+}
+
+const handleMouseOut = () => {
+  console.log('mouse out!');
 }
