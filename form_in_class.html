@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    .firstform {
+      display: flex;
+      flex-direction: column;
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .firstform input {
+      margin-bottom: 10px;
+    }
+  
+  </style>
+  <script>
+    const handleSubmit = (event) => {
+      //this will stop refreshing page
+      event.preventDefault();
+      console.log('Button Clicked!');
+    }
+  </script>
+
+  <form class="firstform" action="https://formspree.io/ayakosayama1987@gmail.com" method="POST">
+    <label>Name:</label>
+    <input required size="40" maxlength="40" type="text" name="firstname" autofocus placeholder="ex: Sam" />
+    <label>Surname:</label>
+    <input required type="text" name="surname" placeholder="ex: Smith" />
+    <label>Email:</label>
+    <input required type="email" name="email" placeholder="ex: ayako@gmail.com" />
+    <label>Password:</label>
+    <input required type="password" name="password" />
+    <label>Tel: </label>
+    <input required type="tel" name="phonenumber" />
+
+    <input type="submit" value="Submit" />
+    <!-- <button type="submit">Submit with button tag</button> -->
+  </form>
+
+</body>
+</html>
