@@ -32,7 +32,7 @@
      </tr>
      <tr>
       <td>Email :</td>
-      <td><input name="email" type="email" autocomplete="on" placeholder="example@gmail.com"></td>
+      <td><input required value="ayako" name="email" type="email" autocomplete="on" placeholder="example@gmail.com"></td>
      </tr>
      <tr>
        <td>City :</td>
@@ -60,7 +60,7 @@
 
    <br><br><br><br>
 
-   <form>
+   <form onsubmit="handleSubmit(e)">
       <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
@@ -99,6 +99,8 @@
         event.preventDefault();
         console.log('form submitted!');
       }
+
+      console.log(document.forms[0].email.value);
 
       // 2nd way: to listen to events
       // const form = document.getElementById('Form')
