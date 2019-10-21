@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="reset.css">
+  <title>Rock Scissors and Paper!</title>
+</head>
+<body>
+  <style>
+    h1 {
+      text-align: center;
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+
+    .gamefield {
+      background-color: darkslategrey;
+      color: white;
+      height: 100vh;
+      padding: 40px;
+    }
+
+    .score {
+      border: 4px solid white;
+      text-align: center;
+      font-size: 40px;
+      width: 200px;
+      height: 80px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    
+    .tag {
+      font-size: 14px;
+      position: absolute;
+      background-color: red;
+      padding: 4px;
+    }
+
+    .tag-user {
+      left: -15px;
+    }
+
+    .tag-comp {
+      right: -15px;
+    }
+
+    .result {
+      text-align: center;
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      grid-column-gap: 20px;
+      height: 60px;
+      font-size: 30px;
+    }
+  </style>
+  <script>
+
+    function playGame(buttonType) {
+      console.log('buttonType', buttonType);
+
+      const buttons = ['rock', 'scissors', 'paper']
+
+      const compAnswer = buttons[Math.floor(Math.random() * Math.floor(3))]
+      //gives me 0,1 or 2
+      console.log('compansser', compAnswer);
+      
+
+      let result;
+
+      if (compAnswer === buttonType) {
+        result = 'tie'
+      } else {
+        switch(compAnswer) {
+          case 'rock':
+            if (buttonType === 'scissors') {
+              result = 'lose'
+            } else {
+              result = 'win'
+            }
+            break;
+          default:
+            break;
+        }
+
+      }
+
+      console.log('result', result);
+
+    }
+  
+  </script>
+  <h1>Rock Scissors and Papper</h1>
+  <div class="gamefield">
+
+    <!-- scoreboard -->
+    <div class="scoreboard">
+      <div class="score">
+        <div class="tag tag-user">User</div>
+        <div class="tag tag-comp">Comp</div>
+        <span class="score-user">0</span>:
+        <span class="score-comp">0</span>
+      </div>
+    </div>
+
+    <!-- result -->
+    <h2 class="result">Click a button to play</h2>
+
+    <!-- buttons -->
+    <div class="buttons">
+      <button onclick="playGame('rock')" class="game-button">Rock</button>
+      <button onclick="playGame('scissors')" class="game-button">Scissors</button>
+      <button onclick="playGame('paper')" class="game-button">Paper</button>
+    </div>
+
+  </div>
+</body>
+</html>
