@@ -73,7 +73,5 @@ console.log("8:undefined", emptyObj.value ) //undefined
 console.log("8:undefined", !emptyObj.value ) //true
 console.log("8:undefined", !!emptyObj.value ) //false
 
-
-
 const value = null;
 console.log("8:null", value ? "Has value" : "has no value"); //"has no value"
