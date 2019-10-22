@@ -8,7 +8,7 @@ console.log("1:name", name);
 
 
 //ES6
-let animal = "cat"
+const animal = "cat"
 console.log("1:animal", animal);
 
 animal = "dog"
@@ -49,7 +49,7 @@ console.log("5:square brackets notation with variable", ayakoObj[jobTitle])
 
 const keyName = "webDev";
 
-let classes = {
+const classes = {
   [keyName]: "This is webdev"
 }
 

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    
+    function examplePromise(str) {
+      return new Promise((resolve, reject) => {
+        //if string exists
+        if(str) {
+          resolve(`Hi, ${str}`);
+        } else {
+          reject('Pssst. String does not exist')
+        }
+      });
+    }
+
+    //1. then()
+    // examplePromise().then((result) => {
+    //   console.log(result)
+    // }).catch((err)=> {
+    //   console.log(err);
+    // });
+
+    //2. async/await
+    async function executeExamplePromise() {
+      try {
+        const result = await examplePromise();
+        
+        //this console will execute IF we get resolve()
+        console.log(result);
+
+      } catch(err) {
+        // will only execute IF we get reject()
+        console.log(err);
+      }
+    }
+
+    executeExamplePromise();
+    console.log('My lovely students!!!');
+  
+  </script>
+  
+</body>
+</html>
