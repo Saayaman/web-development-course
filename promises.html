@@ -28,22 +28,50 @@
     // });
 
     //2. async/await
-    async function executeExamplePromise() {
-      try {
-        const result = await examplePromise();
+    // async function executeExamplePromise() {
+    //   try {
+    //     const result = await examplePromise();
         
-        //this console will execute IF we get resolve()
-        console.log(result);
+    //     //this console will execute IF we get resolve()
+    //     console.log(result);
 
-      } catch(err) {
-        // will only execute IF we get reject()
-        console.log(err);
+    //   } catch(err) {
+    //     // will only execute IF we get reject()
+    //     console.log(err);
+    //   }
+    // }
+    async () => {
+      try {
+        const result = await scaryClown(true);
+        console.log(result)
+      } catch (error) {
+        console.log(error);
       }
     }
 
-    executeExamplePromise();
+    // executeExamplePromise();
     console.log('My lovely students!!!');
+
+
+    // ES7-8
+    // fetch('https://api.github.com/repos/Saayaman/web-development-course/pulls')
+    //   .then((res) => { return res.json()})
+    //   .then((result) => console.log(result))
+    //   .catch(err => console.log(err))
+
+    
+  (async () => {
+   try {
+    const result = await fetch('https://api.github.com/repos/Saayaman/web-development-course/pulls');
+    const json = await result.json();
+    console.log(json[0].url)
+   } catch (error) {
+     console.log(error);
+   }
+  })();
   
+    //jquery or html ajax call
+
   </script>
   
 </body>
