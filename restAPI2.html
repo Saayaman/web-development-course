@@ -7,7 +7,8 @@
   <title>Document</title>
   <script src="api_keys.js"></script>
   <script>
-    const endpoint = "https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/north-india-restaurant-san-francisco"
+    const corsAccess = 'https://cors-anywhere.herokuapp.com/'
+    const endpoint = `${corsAccess}https://api.yelp.com/v3/businesses/north-india-restaurant-san-francisco`
     fetch(endpoint, {
       headers: {
         'Authorization': `Bearer ${api_keys.YELP_API_KEY}`
@@ -16,9 +17,26 @@
     .then((response) => response.json())
     .then((result) => console.log(result))
     .catch((err) => console.log(err));
+
+
+    const superHeroesBaseURL = `https://superheroapi.com/api/${api_keys.HEROES_API_KEY}`
+
+    function clickHero() {
+      const heroName = document.getElementById('heroName').value
+      console.log('heroname', heroName);
+
+      fetch(`${corsAccess}${superHeroesBaseURL}/search/${heroName}`)
+      .then((response) => response.json())
+      .then((result) => console.log('heroid', result))
+      .catch((err) => console.log(err));
+    } 
+
   </script>
 </head>
 <body>
-  
+  <input id="heroName" placeholder="hero name" />
+  <button onclick="clickHero()">Search</button>
+
+  <div id="heroData"></div>
 </body>
 </html>
