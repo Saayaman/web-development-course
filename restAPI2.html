@@ -27,10 +27,24 @@
 
       fetch(`${corsAccess}${superHeroesBaseURL}/search/${heroName}`)
       .then((response) => response.json())
-      .then((result) => console.log('heroid', result))
+      .then((result) => showCharacter(result))
       .catch((err) => console.log(err));
-    } 
+    }
 
+    function showCharacter(result) {
+      console.log(result);
+
+      const heroData = document.getElementById('heroData');
+      
+      const list = result.results.map((result) => {
+        console.log('hi');
+        const listHtml = `<div>${result.name} <img src="${result.image.url}" /></div>`
+        // heroName.innerHtml = listHtml
+
+        heroData.insertAdjacentHTML( 'beforeend', listHtml );
+      })
+    }
+  
   </script>
 </head>
 <body>
