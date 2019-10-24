@@ -32,15 +32,10 @@
     }
 
     function showCharacter(result) {
-      console.log(result);
-
       const heroData = document.getElementById('heroData');
-      
-      const list = result.results.map((result) => {
-        console.log('hi');
-        const listHtml = `<div>${result.name} <img src="${result.image.url}" /></div>`
-        // heroName.innerHtml = listHtml
 
+      const list = result.results.map((result) => {
+        const listHtml = `<div>${result.name} <img src="${result.image.url}" /></div>`
         heroData.insertAdjacentHTML( 'beforeend', listHtml );
       })
     }
