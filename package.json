@@ -1,0 +1,19 @@
+{
+  "name": "web-development-course",
+  "version": "1.0.0",
+  "description": "Web is deployed on github pages  https://saayaman.github.io/web-development-course/",
+  "main": "api_keys.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saayaman/web-development-course.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saayaman/web-development-course/issues"
+  },
+  "homepage": "https://github.com/Saayaman/web-development-course#readme"
+}
