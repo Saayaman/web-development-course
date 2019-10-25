@@ -1,0 +1,8 @@
+
+$red: #FF55A3;
+
+// $red: red;
+
+@mixin color($color) {
+  color: $color;
+}

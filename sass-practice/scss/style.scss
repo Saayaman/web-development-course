@@ -1,0 +1,13 @@
+@import 'variables';
+
+$max-width: 1440px;
+
+
+h1 {
+  @include color($red);
+  width: $max-width;
+
+  .example {
+    color: pink;
+  }
+}
