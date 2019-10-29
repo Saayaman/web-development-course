@@ -27,7 +27,7 @@
       }
 
       #animate1 {
-        background-color: teal;
+        background-color: pink;
         display: block;
       }
 
@@ -51,6 +51,7 @@
     var scene = new ScrollMagic.Scene({
       triggerElement: "#trigger1"
     })
+    //this part is GSAP
     .setTween("#animate1", 0.5, {backgroundColor: "green", scale: 2.5}) // trigger a TweenMax.to tween
     .addIndicators({name: "1 (duration: 200)"}) // add indicators (requires plugin)
     .addTo(controller);
