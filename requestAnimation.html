@@ -7,31 +7,36 @@
   <title>Document</title>
 </head>
 <body>
-    <style>
-        #box {
-          background-color: red;
-          height: 100px;
-          width: 100px;
-          display: block;
-        }
-      </style>
+  <style>
+    #box {
+      display: block;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+  </style>
+  <div id="box">BOX</div>
 
-  <div id="box">hiiii</div>
   <script>
-      var start = null;
-      var element = document.getElementById('box');
-  
-      function step(timestamp) {
-        console.log('execute');
-        if (!start) start = timestamp;
-        var progress = timestamp - start;
-        element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
-        if (progress < 2000) {
-          window.requestAnimationFrame(step);
-        }
+    const box = document.getElementById('box')
+    let count = 0;
+
+    function animate() {
+      console.log('Time!', new Date().getMilliseconds());
+      count += 1;
+      let frame;
+
+      box.style.transform = `translateX(${count}px)`
+
+      if (count > 500) {
+        window.cancelAnimationFrame(frame)
+      } else {
+        frame = window.requestAnimationFrame(animate)
       }
-  
-      window.requestAnimationFrame(step);
-    </script>
+    }
+
+    animate();
+
+  </script>
 </body>
 </html>
