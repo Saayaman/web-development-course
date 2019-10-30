@@ -50,17 +50,47 @@
     context.strokeStyle = 'red'
     context.stroke();
 
-    let x;
-    let y;
+    // let x;
+    // let y;
+    // for(i = 0; i < 100; i++) {
+    //   x = Math.random() * window.innerWidth;
+    //   y = Math.random() * window.innerHeight;
+    //   context.beginPath();
+    //   context.arc(x, y, 50, Math.PI * 2, false) // arc(x, y, radius, startAngle: float, counterClockwise?)
+    //   context.strokeStyle = 'red'
+    //   context.stroke();
+    // }
 
-    for(i = 0; i < 100; i++) {
-      x = Math.random() * window.innerWidth;
-      y = Math.random() * window.innerHeight;
+    let circleX = 200;
+    let circleY = 200;
+
+    let directionX = 2;
+    let directionY = -2;
+
+    function animate() {
+      //animate!
+      context.clearRect(0, 0, innerWidth, innerHeight); //context.clearRect( x, y, width, height )
+      // context.clearRect(circleX - 50,  circleY - 50, 120, 120); //context.clearRect( x, y, width, height )
+
+      if(circleY > innerHeight - 50 || circleY < 50 ) {
+        directionY = -directionY
+      }
+      if(circleX > innerWidth - 50 ||  circleX < 50 ) {
+        directionX = -directionX
+      }
+
+      circleX += directionX;
+      circleY += directionY;
       context.beginPath();
-      context.arc(x, y, 50, Math.PI * 2, false) // arc(x, y, radius, startAngle: float, counterClockwise?)
+      context.arc(circleX, circleY, 50, Math.PI * 2, false) // arc(x, y, radius, startAngle: float, counterClockwise?)
       context.strokeStyle = 'red'
       context.stroke();
+
+      window.requestAnimationFrame(animate)
     }
+
+    animate();
+
   </script>
 </body>
 </html>
