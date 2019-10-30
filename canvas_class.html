@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }  
+  </style>
+  <canvas id="myCanvas"></canvas>
+
+  <script>
+    let canvas = document.getElementById('myCanvas');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // c is kinda like a super object so we can draw 2d things in here
+    let context = canvas.getContext('2d');
+
+    //1. rect
+    context.fillStyle = 'red' // #hex, rgba, string
+    context.fillRect(100, 100, 100, 100); // fillRect(x, y, width, height)
+    
+    context.fillStyle = 'blue'
+    context.fillRect(200, 200, 300, 100);
+
+    
+    //2. line
+    //2-a: alwasy start with beginPath
+    context.beginPath();
+
+    context.strokeStyle = 'green';
+    context.lineWidth = 2;
+    context.moveTo(0,0) // startingPoint = moveTo(x, y)
+    context.lineTo(500,500);
+    context.lineTo(300,500);
+    context.lineTo(300,100);
+
+    //2-b: always end with .stroke()
+    context.stroke()
+
+    //3. Circles
+    context.beginPath();
+    context.arc(500, 500, 50, Math.PI * 2, false) // arc(x, y, radius, startAngle: float, counterClockwise?)
+    context.strokeStyle = 'red'
+    context.stroke();
+
+    let x;
+    let y;
+
+    for(i = 0; i < 100; i++) {
+      x = Math.random() * window.innerWidth;
+      y = Math.random() * window.innerHeight;
+      context.beginPath();
+      context.arc(x, y, 50, Math.PI * 2, false) // arc(x, y, radius, startAngle: float, counterClockwise?)
+      context.strokeStyle = 'red'
+      context.stroke();
+    }
+  </script>
+</body>
+</html>
