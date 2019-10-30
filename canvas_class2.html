@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>100 random bouncing balls</title>
+</head>
+<body>
+  
+  <canvas id="myCanvas"></canvas>
+  <script>
+
+    let canvas = document.getElementById('myCanvas')
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let context = canvas.getContext('2d');
+
+      class Circle {
+        constructor(x,y) {
+          this.circleX = x;
+          this.circleY = y;
+
+          this.directionY = 2;
+          this.directionX = 2;
+
+          console.log('circleYX', this.circleX, this.circleY);
+          // this.animate(this.circleX, this.circleY, this.directionX, this.directionY);
+        }
+
+      animate() {
+
+        context.beginPath();
+        context.clearRect(this.circleX - 50 - 1, this.circleY - 50 - 1, 50 * 2 + 2, 50 * 2 + 2);
+        context.clearRect(this.circleX - 50 - 1, this.circleY - 50 - 1, 50 * 2 + 2, 50 * 2 + 2);
+        context.closePath();
+        // context.clearRect(0, 0, innerWidth, innerHeight); //context.clearRect( x, y, width, height )
+        // context.clearRect(circleX - 50,  circleY - 50, 120, 120); //context.clearRect( x, y, width, height )
+        
+
+        if(this.circleY > window.innerHeight - 50 || this.circleY < 50 ) {
+          this.directionY = -this.directionY
+        }
+        if(this.circleX > window.innerWidth - 50 || this.circleX < 50 ) {
+          this.directionX = -this.directionX
+        }
+
+        this.circleX += this.directionX;
+        this.circleY += this.directionY;
+        context.beginPath();
+        context.arc(this.circleX, this.circleY, 50, Math.PI * 2, false)
+        context.strokeStyle = 'red'
+        context.stroke();
+
+
+        window.requestAnimationFrame(() => this.animate())
+      }
+    }
+
+    for(i = 0; i < 100; i++) {
+      let randomX = Math.random() * (window.innerWidth - 50);
+      let randomY = Math.random() * (window.innerHeight - 50)
+      const circle = new Circle(randomX, randomY);
+      circle.animate()
+    }
+
+  </script>
+</body>
+</html>
