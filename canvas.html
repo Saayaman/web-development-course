@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <style>
+    canvas {
+      border: 1px solid black;
+      background-color: red;
+    }
+  </style> -->
+  <canvas id="myCanvas"></canvas>
+  <script>
+      let canvas = document.getElementById('myCanvas')
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // c is kinda like a super object so we can draw 2d things in here
+      let c = canvas.getContext('2d');
+
+      // c.fillRect(x, y, width, height)
+      c.fillStyle = 'blue'
+      c.fillRect(100, 100, 100, 100)
+
+      c.fillStyle = 'pink'
+      c.fillRect(300, 250, 100, 100)
+
+      c.beginPath()
+      c.moveTo(50, 300) //c.moveTo(x, y)
+      c.lineTo(300, 200)
+      c.lineTo(500, 200)
+      c.strokeStyle = 'red'
+      c.stroke()
+
+      // c.beginPath()
+      // c.arc(300, 300, 30, Math.PI * 2, false) //c.arc(300, 300, 30, startAncle: Float, counterClockWise?)
+      // c.strokeStyle = 'blue'
+      // c.stroke();
+
+
+
+      for(i = 0; i < 3; i++) {
+        var x = Math.random() * window.innerWidth;
+        var y = Math.random() * window.innerHeight;
+        c.beginPath()
+        c.arc(x, y, 30, Math.PI * 2, false);
+        c.strokeStyle = 'blue'
+        c.stroke();
+      }
+
+      let circleX = 300;
+      let direction = 2;
+      function animate() {
+        c.clearRect(0,0,innerWidth,innerHeight);
+        c.beginPath()
+        c.arc(circleX, 300, 30, Math.PI * 2, false) //c.arc(300, 300, 30, startAncle: Float, counterClockWise?)
+        c.strokeStyle = 'blue'
+        c.stroke();
+
+        if (circleX + 30 > window.innerWidth || circleX - 30 < 0) {
+          direction = -direction
+        }
+
+        circleX += direction;
+
+        window.requestAnimationFrame(animate)
+      }
+
+      animate();
+    </script>
+</body>
+</html>

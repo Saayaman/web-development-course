@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <style>
+        #box {
+          background-color: red;
+          height: 100px;
+          width: 100px;
+          display: block;
+        }
+      </style>
+
+  <div id="box">hiiii</div>
+  <script>
+      var start = null;
+      var element = document.getElementById('box');
+  
+      function step(timestamp) {
+        console.log('execute');
+        if (!start) start = timestamp;
+        var progress = timestamp - start;
+        element.style.transform = 'translateX(' + Math.min(progress / 10, 200) + 'px)';
+        if (progress < 2000) {
+          window.requestAnimationFrame(step);
+        }
+      }
+  
+      window.requestAnimationFrame(step);
+    </script>
+</body>
+</html>
